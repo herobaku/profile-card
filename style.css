@@ -15,7 +15,7 @@
 }
 
 body {
-    position: relative;
+  position: relative;
   background: var(--dark-cyan);
   font-size: 1.1rem;
   height: 100dvh;
@@ -33,30 +33,30 @@ body {
   overflow: hidden;
 }
 
+body::after,
+body::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+
 body::after {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    display: block;
-    background: url("./images/bg-pattern-top.svg") top center/contain no-repeat;
-    width: 50%;
-    height: 100%;
-    z-index: -1;
-    transform: translate(-15%, -40%);
+  top: 0%;
+  left: 0%;
+  transform: translate(-15%, -40%);
 }
 
 body::before {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
-    display: block;
-    background: url("./images/bg-pattern-bottom.svg") top center/contain no-repeat;
-    width: 50%;
-    height: 100%;
-    z-index: -1;
-    transform: translate(15%, 40%);
+  bottom: 0%;
+  right: 0%;
+  transform: translate(15%, 40%);
 }
 
 .wrapper {
@@ -137,8 +137,11 @@ body::before {
   }
 }
 
+.attribution {
+  font-size: 16px;
+  text-align: center;
+}
 
-
-.attribution { font-size: 16px; text-align: center; }
-
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
